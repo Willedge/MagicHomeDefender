@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Log.unity
+    guid: 314ac234f0a2b014a9fa16c3a3bc80ca
+  - enabled: 1
+    path: Assets/Scenes/Register.unity
+    guid: 7cd2edcb1b5ad874586c3dba1053dce9
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f2f8620cacfb41e4fbbe19327b0fcbcd
+  - enabled: 1
+    path: Assets/Scenes/Mainenvironment.unity
+    guid: d4f0327ef55db354185ecb681bc7243a
+  - enabled: 1
+    path: Assets/Scenes/Bag.unity
+    guid: c4eeb10fb8ba54940a84c90155dfd5bf
+  - enabled: 1
+    path: Assets/Scenes/ChangeName.unity
+    guid: d92a15507570525428956ed2cf1f7cf7
+  - enabled: 1
+    path: Assets/Scenes/ChangePassword.unity
+    guid: 933c72f9bd9545644a7409a20fed9aec
+  - enabled: 1
+    path: Assets/Scenes/Friend.unity
+    guid: ff35f93583d5b944da1d546ca7732841
+  - enabled: 1
+    path: Assets/Scenes/Market.unity
+    guid: a657007d419806a479057e8489b668fb
+  - enabled: 1
+    path: Assets/Scenes/Personel.unity
+    guid: 9defbb2757c83c24aa57505b49cd3705
+  - enabled: 1
+    path: Assets/Scenes/Setting.unity
+    guid: 13338dce7ef383946a16889d2494fd54
+  m_configObjects: {}
