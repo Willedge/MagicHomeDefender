@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>
+            register
+        </title>
+    </head>
+    <body>
+    <input id="email"><br><br>
+    <button onclick="isEmail()">Email</button><br><br>
+    <input id="pass"><br><br>
+    <button onclick="">Sign up</button>
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js"></script> -->
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDLRjCVkhIj0AL3AEvY2tkSl_ARtkh7XwQ",
+        authDomain: "magichomedefander.firebaseapp.com",
+        databaseURL: "https://magichomedefander-default-rtdb.firebaseio.com",
+        projectId: "magichomedefander",
+        storageBucket: "magichomedefander.appspot.com",
+        messagingSenderId: "272498541794",
+        appId: "1:272498541794:web:c92b29f4265805d41e8abb",
+        measurementId: "G-YL11MMGWS6"
+    };
+    // var firebase = require('firebase');
+    firebase.initializeApp(config);
+    function isEmail() {
+        Email = document.getElementById("email").value;
+        Password = document.getElementById("pass").value;
+        if (Email.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1)
+        {
+
+        }//return true;
+        else
+        {
+            alert("Error Email!");
+            return flase;
+        }
+        if(Password!="")
+        {
+            firebase.auth().createUserWithEmailAndPassword(Email, Password).catch(function(error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert("Failed to register!"+errorMessage);
+            });
+            alert("Welcome to join us.");
+        }
+        else
+        {
+            alert("The password can not be empty!")
+        }
+    }
+ </script>
+    </body>
+</html>

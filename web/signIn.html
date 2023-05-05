@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+    </head>
+    <body>
+    <input id="email"><br><br>
+    <button onclick="isEmail()">Login</button><br><br>
+    <input id="pass"><br><br>
+    <button onclick="">Login</button>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js"></script> -->
+    <script type="module">
+    // Initialize Firebase
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
+
+
+    var config = {
+        apiKey: "AIzaSyDLRjCVkhIj0AL3AEvY2tkSl_ARtkh7XwQ",
+        authDomain: "magichomedefander.firebaseapp.com",
+        databaseURL: "https://magichomedefander-default-rtdb.firebaseio.com",
+        projectId: "magichomedefander",
+        storageBucket: "magichomedefander.appspot.com",
+        messagingSenderId: "272498541794",
+        appId: "1:272498541794:web:c92b29f4265805d41e8abb",
+         measurementId: "G-YL11MMGWS6"
+    };
+    initializeApp(config);
+    function isEmail() {
+        Email = document.getElementById("email").value;
+        Password = document.getElementById("pass").value;
+        if (Email.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1)
+        {
+
+        }//return true;
+        else
+        {
+            alert("Error Email!");
+            return flase;
+        }
+        if(Password!="")
+        {
+            getAuth().signInWithEmailAndPassword(Email, Password).catch(function(error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                alert("Login failed!"+errorMessage);
+            });
+        }
+        else
+        {
+            alert("The password can not be empty!")
+        }
+    }
+    getAuth().onAuthStateChanged(function(user) {
+    if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        alert("Login successful");
+        alert(displayName+"|"+email+"|"+emailVerified+"|"+photoURL+"|"+isAnonymous+"|"+uid+"|"+providerData);
+        window.location.href = "index.html"
+    } else {
+        // User is signed out.
+        // ...
+    }
+    });
+    </script>
+    </body>
+</html>
